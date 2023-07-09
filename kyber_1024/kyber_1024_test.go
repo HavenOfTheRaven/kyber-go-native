@@ -23,11 +23,11 @@ func Test_kyber1024(t *testing.T){
 	test_string:=string(data)
 	curpos=30
 	for count:=0;count!=100;count++{
-		temp_len,err=kyber_ops.Init_Seed(test_string[curpos:])
+		err=kyber_ops.Init_Seed(test_string[curpos:])
 		if err!=nil{
 			t.Fatal(err)
 		}
-		curpos+=temp_len
+		curpos+=102
 		sk:=Keygen()
 		pk,err:=Bytes_to_Pk(sk.Pk_Bytes[:])
 		if err!=nil{
@@ -61,11 +61,11 @@ func Test_kyber1024_90s(t *testing.T){
 	test_string:=string(data)
 	curpos=34
 	for count:=0;count!=100;count++{
-		temp_len,err=kyber_ops.Init_Seed(test_string[curpos:])
+		err=kyber_ops.Init_Seed(test_string[curpos:])
 		if err!=nil{
 			t.Fatal(err)
 		}
-		curpos+=temp_len
+		curpos+=102
 		sk:=Keygen_90s()
 		pk,err:=Bytes_to_Pk_90s(sk.Pk_Bytes[:])
 		if err!=nil{
