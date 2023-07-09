@@ -32,12 +32,11 @@ type rng_info struct{
 	iv [16]byte
 }
 
-func Init_Seed(str string)(curpos uint,err error){
-	temp_data,err:=hex.DecodeString(str[curpos:curpos+96])
+func Init_Seed(str string)(err error){
+	temp_data,err:=hex.DecodeString(str[:96])
 	if err!=nil{
 		return
 	}
-	curpos+=102
 	init_rng((*[48]byte)(temp_data))
 	return
 }
