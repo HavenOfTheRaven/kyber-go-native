@@ -42,6 +42,11 @@ func Init_Seed(str string)(err error){
 }
 
 var rng rng_info
+var test_rand bool=false
+
+func Set_test_rand(){
+	test_rand=true
+}
 
 func init_rng(seed *[48]byte){
 	rng.iv=[16]byte{}
@@ -50,6 +55,10 @@ func init_rng(seed *[48]byte){
 }
 
 func Read_RNG(rand_data []byte){
+	if !test_rand{
+		rand.Read(rand_data)
+		return
+	}
 	cipher,_:=aes.NewCipher(rng.key[:])
 	length:=len(rand_data)
 	for cur:=0;cur<length;cur+=16{
@@ -77,12 +86,6 @@ func update_rng(addion *[48]byte){
 			I++
 		}
 	}
-}
-
-func init(){
-	var bytes48 [48]byte
-	rand.Read(bytes48[:])
-	init_rng(&bytes48)
 }
 
 func CBD2(B *[128]byte,f *[256]int16){
@@ -318,7 +321,7 @@ func CSUBQ_vec[v vec](f v){
 }
 
 func aes_count(iv *[16]byte){
-	for i:=15;i>0;i--{
+	for i:=15;i>=0;i--{
 		iv[i]++
 		if iv[i]>0{
 			break

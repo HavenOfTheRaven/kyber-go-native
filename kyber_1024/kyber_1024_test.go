@@ -16,6 +16,7 @@ import(
 
 func Test_kyber1024(t *testing.T){
 	var curpos,temp_len uint
+	kyber_ops.Set_test_rand()
 	data,err:=os.ReadFile("kyber1024-kat.rsp")
 	if err!=nil{
 		t.Fatal(err)
@@ -54,6 +55,7 @@ func Test_kyber1024(t *testing.T){
 
 func Test_kyber1024_90s(t *testing.T){
 	var curpos,temp_len uint
+	kyber_ops.Set_test_rand()
 	data,err:=os.ReadFile("kyber1024_90s-kat.rsp")
 	if err!=nil{
 		t.Fatal(err)
