@@ -8,7 +8,7 @@ package main
 
 import(
 	"fmt"
-	"github.com/Tracy-Tzu/kyber-go-native/kyber_768"
+	"github.com/HavenOfTheRaven/kyber-go-native/kyber_768"
 )
 
 func main(){

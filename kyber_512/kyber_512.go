@@ -1,4 +1,4 @@
-/*Copyright (c) 2023 Tracy-Tzu under the MIT license
+/*Copyright (c) 2025 Haven F.C. Johnson under the MIT license
 The kyber algorithm has a license that can be found in the file titled "nist-pqc-license-summary-and-excerpts.pdf"
 
 Go port of the kyber post quantum encryption algorithm laid out by the NIST round 3 package that can be found by following the link below:
@@ -9,7 +9,7 @@ This file contains code to implement kyber_512 and kyber_512_90s
 package kyber_512
 
 import(
-	"github.com/Tracy-Tzu/kyber-go-native/kyber_ops"
+	"github.com/HavenOfTheRaven/kyber-go-native/kyber_ops"
 	"golang.org/x/crypto/sha3"
 	"crypto/aes"
 	"crypto/sha256"

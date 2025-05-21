@@ -1,4 +1,4 @@
-module github.com/Tracy-Tzu/kyber-go-native
+module github.com/HavenOfTheRaven/kyber-go-native
 
 go 1.20
 
